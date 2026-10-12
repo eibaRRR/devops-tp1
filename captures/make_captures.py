@@ -43,6 +43,7 @@ jobs = [
     ("endpoint_root.txt", "Invoke-RestMethod  http://127.0.0.1:5000/", "capture_07_endpoint_root.png"),
     ("endpoint_hello.txt", "Invoke-RestMethod  http://127.0.0.1:5000/hello/EMSI", "capture_08_endpoint_hello.png"),
     ("ci.txt", "GitHub Actions  -  .github/workflows/ci.yml", "capture_09_ci.png"),
+    ("dockerhub_push.txt", "Docker Hub  -  push poee55/devops-tp1", "capture_10_dockerhub.png"),
 ]
 
 for src, title, out in jobs:

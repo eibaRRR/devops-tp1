@@ -64,6 +64,28 @@ port `0.0.0.0:5000->5000/tcp`).
 À chaque `push` / `pull_request` : checkout, setup Python 3.12, `pip install -r
 requirements.txt`, puis `pytest -v`.
 
+## 7bis. Publication de l'image (Docker Hub)
+
+L'image est publiée sous **`poee55/devops-tp1`** :
+
+```bash
+docker login -u poee55
+docker tag devops-tp1:1.0 poee55/devops-tp1:1.0
+docker tag devops-tp1:1.0 poee55/devops-tp1:latest
+docker push poee55/devops-tp1:1.0
+docker push poee55/devops-tp1:latest
+```
+
+Récupération sur n'importe quelle machine (déploiement délocalisé) :
+
+```bash
+docker pull poee55/devops-tp1:latest
+docker run --rm -p 5000:5000 poee55/devops-tp1:latest
+```
+
+- Dépôt de code : https://github.com/eibaRRR/devops-tp1
+- Image : https://hub.docker.com/r/poee55/devops-tp1
+
 ## 8. Réponses aux questions
 
 **Pourquoi tester avant le build ?**
